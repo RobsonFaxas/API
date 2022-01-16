@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "2f4f0539-877d-4c59-969a-1683bae96fd9": {
+      "ProjectGuid": "2f4f0539-877d-4c59-969a-1683bae96fd9",
+      "DisplayName": "RRF.API",
+      "ColorIndex": 0
+    },
+    "1003f627-75eb-4df0-99c7-df62491640d7": {
+      "ProjectGuid": "1003f627-75eb-4df0-99c7-df62491640d7",
+      "DisplayName": "RRF.Domain",
+      "ColorIndex": 1
+    },
+    "e782942a-caf8-4bae-9047-4b5dc2a96926": {
+      "ProjectGuid": "e782942a-caf8-4bae-9047-4b5dc2a96926",
+      "DisplayName": "RRF.Application",
+      "ColorIndex": 2
+    },
+    "cf275247-8b09-414d-ad63-3f49b291675d": {
+      "ProjectGuid": "cf275247-8b09-414d-ad63-3f49b291675d",
+      "DisplayName": "RRF.Dal",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}
