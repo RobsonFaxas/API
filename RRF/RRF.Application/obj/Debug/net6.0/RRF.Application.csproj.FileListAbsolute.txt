@@ -1,0 +1,12 @@
+C:\robson\github\API\RRF\RRF.Application\bin\Debug\net6.0\RRF.Application.deps.json
+C:\robson\github\API\RRF\RRF.Application\bin\Debug\net6.0\RRF.Application.dll
+C:\robson\github\API\RRF\RRF.Application\bin\Debug\net6.0\ref\RRF.Application.dll
+C:\robson\github\API\RRF\RRF.Application\bin\Debug\net6.0\RRF.Application.pdb
+C:\robson\github\API\RRF\RRF.Application\obj\Debug\net6.0\RRF.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\robson\github\API\RRF\RRF.Application\obj\Debug\net6.0\RRF.Application.AssemblyInfoInputs.cache
+C:\robson\github\API\RRF\RRF.Application\obj\Debug\net6.0\RRF.Application.AssemblyInfo.cs
+C:\robson\github\API\RRF\RRF.Application\obj\Debug\net6.0\RRF.Application.csproj.CoreCompileInputs.cache
+C:\robson\github\API\RRF\RRF.Application\obj\Debug\net6.0\RRF.Application.dll
+C:\robson\github\API\RRF\RRF.Application\obj\Debug\net6.0\ref\RRF.Application.dll
+C:\robson\github\API\RRF\RRF.Application\obj\Debug\net6.0\RRF.Application.pdb
+C:\robson\github\API\RRF\RRF.Application\obj\Debug\net6.0\RRF.Application.csproj.AssemblyReference.cache

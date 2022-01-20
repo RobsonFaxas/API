@@ -6,6 +6,8 @@ C:\robson\github\API\RRF\RRF.API\bin\Debug\net6.0\RRF.API.runtimeconfig.json
 C:\robson\github\API\RRF\RRF.API\bin\Debug\net6.0\RRF.API.dll
 C:\robson\github\API\RRF\RRF.API\bin\Debug\net6.0\ref\RRF.API.dll
 C:\robson\github\API\RRF\RRF.API\bin\Debug\net6.0\RRF.API.pdb
+C:\robson\github\API\RRF\RRF.API\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Versioning.dll
+C:\robson\github\API\RRF\RRF.API\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll
 C:\robson\github\API\RRF\RRF.API\bin\Debug\net6.0\Microsoft.OpenApi.dll
 C:\robson\github\API\RRF\RRF.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\robson\github\API\RRF\RRF.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
@@ -27,5 +29,3 @@ C:\robson\github\API\RRF\RRF.API\obj\Debug\net6.0\RRF.API.dll
 C:\robson\github\API\RRF\RRF.API\obj\Debug\net6.0\ref\RRF.API.dll
 C:\robson\github\API\RRF\RRF.API\obj\Debug\net6.0\RRF.API.pdb
 C:\robson\github\API\RRF\RRF.API\obj\Debug\net6.0\RRF.API.genruntimeconfig.cache
-C:\robson\github\API\RRF\RRF.API\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Versioning.dll
-C:\robson\github\API\RRF\RRF.API\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll

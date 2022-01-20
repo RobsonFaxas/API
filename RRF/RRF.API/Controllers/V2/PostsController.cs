@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using RRF.Domain.Models;
+using RRF.Domain.Aggregates.PostAggregate;
 
 namespace RRF.API.Controllers.V2
 {
@@ -11,9 +11,8 @@ namespace RRF.API.Controllers.V2
         [HttpGet]
         [Route("{id}")]
         public IActionResult GetById(int id)
-        {
-            var post = new Post { Id = id, Text = "Hello, universe!" };
-            return Ok(post);
+        {            
+            return Ok();
         }
     }
 }
