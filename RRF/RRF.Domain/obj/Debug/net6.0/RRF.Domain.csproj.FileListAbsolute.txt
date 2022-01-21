@@ -9,4 +9,3 @@ C:\robson\github\API\RRF\RRF.Domain\obj\Debug\net6.0\RRF.Domain.csproj.CoreCompi
 C:\robson\github\API\RRF\RRF.Domain\obj\Debug\net6.0\RRF.Domain.dll
 C:\robson\github\API\RRF\RRF.Domain\obj\Debug\net6.0\ref\RRF.Domain.dll
 C:\robson\github\API\RRF\RRF.Domain\obj\Debug\net6.0\RRF.Domain.pdb
-C:\robson\github\API\RRF\RRF.Domain\obj\Debug\net6.0\RRF.Domain.csproj.AssemblyReference.cache

@@ -16,11 +16,11 @@ namespace RRF.Domain.Aggregates.UserProfileAggregate
         public string LastName { get; private set; }
         public string EmailAddress { get; private set; }
         public string Phone { get; private set; }
-        public DateOnly DateOfBirth { get; private set; }
+        public DateTime DateOfBirth { get; private set; }
         public string CurrentCity { get; private set; }
 
         public static BasicInfo CreateBasicInfo(string firstName, string lastName, string emailAddress,
-            string phone, DateOnly dateOfBirth, string currentCity)
+            string phone, DateTime dateOfBirth, string currentCity)
         {
             // TO DO: implement validation, error handling strategies, error notification strategies
             return new BasicInfo
