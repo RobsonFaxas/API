@@ -69,3 +69,10 @@ C:\robson\github\API\RRF\RRF.API\bin\Debug\net6.0\Microsoft.Extensions.Identity.
 C:\robson\github\API\RRF\RRF.API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 C:\robson\github\API\RRF\RRF.API\bin\Debug\net6.0\RRF.Dal.dll
 C:\robson\github\API\RRF\RRF.API\bin\Debug\net6.0\RRF.Dal.pdb
+C:\robson\github\API\RRF\RRF.API\bin\Debug\net6.0\AutoMapper.dll
+C:\robson\github\API\RRF\RRF.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\robson\github\API\RRF\RRF.API\bin\Debug\net6.0\MediatR.dll
+C:\robson\github\API\RRF\RRF.API\bin\Debug\net6.0\MediatR.Contracts.dll
+C:\robson\github\API\RRF\RRF.API\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\robson\github\API\RRF\RRF.API\bin\Debug\net6.0\RRF.Application.dll
+C:\robson\github\API\RRF\RRF.API\bin\Debug\net6.0\RRF.Application.pdb

@@ -7,7 +7,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.0" />
+    <PackageReference Include="MediatR" Version="10.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Posts\" />
+    <Folder Include="Posts\CommandHandlers\" />
+    <Folder Include="Posts\Commands\" />
+    <Folder Include="Posts\Queries\" />
+    <Folder Include="Posts\QueryHandlers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RRF.Dal\RRF.Dal.csproj" />
+    <ProjectReference Include="..\RRF.Domain\RRF.Domain.csproj" />
   </ItemGroup>
 
 </Project>

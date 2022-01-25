@@ -3,13 +3,13 @@ using RRF.Domain.Aggregates.PostAggregate;
 
 namespace RRF.API.Controllers.V2
 {
-    [ApiVersion("2.0")]    
-    [Route("api/v{version:apiVersion}/[controller]")]
+    [ApiVersion("2.0")]
+    [Route(ApiRoutes.BaseRoute)]
     [ApiController]
     public class PostsController : ControllerBase
     {
         [HttpGet]
-        [Route("{id}")]
+        [Route(ApiRoutes.Posts.GetByIdRoute)]
         public IActionResult GetById(int id)
         {            
             return Ok();
