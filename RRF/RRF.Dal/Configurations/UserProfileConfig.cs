@@ -13,7 +13,11 @@ namespace RRF.Dal.Configurations
     {
         public void Configure(EntityTypeBuilder<UserProfile> builder)
         {
-            builder.OwnsOne(up => up.BasicInfo);
+            builder.OwnsOne(up => up.BasicInfo).Property(p => p.Phone).HasMaxLength(30);
+            builder.OwnsOne(up => up.BasicInfo).Property(p => p.EmailAddress).HasMaxLength(200);
+            builder.OwnsOne(up => up.BasicInfo).Property(p => p.CurrentCity).HasMaxLength(100);
+            builder.OwnsOne(up => up.BasicInfo).Property(p => p.FirstName).HasMaxLength(100);
+            builder.OwnsOne(up => up.BasicInfo).Property(p => p.LastName).HasMaxLength(100);
         }
     }
 }

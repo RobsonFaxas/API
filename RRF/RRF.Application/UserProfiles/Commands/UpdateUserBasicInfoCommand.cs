@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using RRF.Application.Models;
 using RRF.Domain.Aggregates.UserProfileAggregate;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RRF.Application.UserProfiles.Commands
 {
-    public class UpdateUserBasicInfoCommand : IRequest
+    public class UpdateUserBasicInfoCommand : IRequest<OperationResult<UserProfile>>
     {
         public Guid UserProfileId { get; set; }
         public string FirstName { get; set; }
