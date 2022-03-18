@@ -1,7 +1,11 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
+using RRF.Application.Enums;
+using RRF.Application.Exceptions;
+using RRF.Application.Models;
 using RRF.Application.UserProfiles.Commands;
 using RRF.Dal;
+using RRF.Domain.Aggregates.UserProfileAggregate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace RRF.Application.UserProfiles.CommandHandlers
 {
-    public class DeleteUserProfileHandler : IRequestHandler<DeleteUserCommand>
+    public class DeleteUserProfileHandler : IRequestHandler<DeleteUserCommand, OperationResult<UserProfile>>
     {
         private readonly DataContext _ctx;
 
@@ -19,15 +23,50 @@ namespace RRF.Application.UserProfiles.CommandHandlers
             _ctx = ctx;
         }
 
-        public async Task<Unit> Handle(DeleteUserCommand request, CancellationToken cancellationToken)
+        public async Task<OperationResult<UserProfile>> Handle(DeleteUserCommand request, CancellationToken cancellationToken)
         {
-            var userProfile = await _ctx.UserProfiles.FirstOrDefaultAsync(up => up.UserProfileId == request.UserProfileId);
-            if (userProfile is null)
-                return new Unit();
-            _ctx.UserProfiles.Remove(userProfile);
-            await _ctx.SaveChangesAsync();
+            var result = new OperationResult<UserProfile>();
+            try
+            {
+                var userProfile = await _ctx.UserProfiles.FirstOrDefaultAsync(up => up.UserProfileId == request.UserProfileId);
+                if (userProfile is null)
+                {
+                    throw new AppException(new Error()
+                    {
+                        Message = $"No UserProfile was found with ID {request.UserProfileId}.",
+                        Code = ErrorCodes.NotFound
+                    });
+                }
 
-            return new Unit();
+                _ctx.UserProfiles.Remove(userProfile);
+                await _ctx.SaveChangesAsync();
+
+                result.Payload = userProfile;
+                result.Success = true;
+            }
+            catch (AppException ex)
+            {
+                result.Success = false;
+                result.Errors.Add(ex.Error);
+            }
+            catch (Exception ex)
+            {
+                result.Success = false;
+                result.Errors.Add(new Error()
+                {
+                    Message = ex.Message,
+                    Code = ErrorCodes.InternalServerError
+                });
+                if (ex.InnerException is not null)
+                {
+                    result.Errors.Add(new Error()
+                    {
+                        Message = ex.InnerException.Message,
+                        Code = ErrorCodes.InternalServerError
+                    });
+                }
+            }
+            return result;
         }
     }
 }

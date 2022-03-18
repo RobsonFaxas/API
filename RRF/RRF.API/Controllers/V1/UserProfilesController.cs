@@ -28,7 +28,7 @@ namespace RRF.API.Controllers.V1
         {
             var query = new GetAllUserProfiles();
             var response = await _mediator.Send(query);
-            var profiles = _mapper.Map<List<UserProfileResponse>>(response);
+            var profiles = _mapper.Map<List<UserProfileResponse>>(response.Payload);
             return Ok(profiles);
         }
 
@@ -37,8 +37,8 @@ namespace RRF.API.Controllers.V1
         {
             var command = _mapper.Map<CreateUserCommand>(profile);
             var response = await _mediator.Send(command);
-            var userProfile = _mapper.Map<UserProfileResponse>(response);
-            return CreatedAtAction(nameof(GetUserProfileById), new { id = response.UserProfileId.ToString() }, userProfile);
+            var userProfile = _mapper.Map<UserProfileResponse>(response.Payload);
+            return CreatedAtAction(nameof(GetUserProfileById), new { id = userProfile.UserProfileId.ToString() }, userProfile);
         }
 
         [Route(ApiRoutes.UserProfiles.IdRoute)]
@@ -47,10 +47,9 @@ namespace RRF.API.Controllers.V1
         {
             var query = new GetUserProfileById { UserProfileId = Guid.Parse(id) };
             var response = await _mediator.Send(query);
-
-            if (response is null) return NotFound($"No user found with profile ID {id}");
-
-            var userProfile = _mapper.Map<UserProfileResponse>(response);
+            if (!response.Success)
+                return HandleErrorResponse(response.Errors);
+            var userProfile = _mapper.Map<UserProfileResponse>(response.Payload);
             return Ok(userProfile);
         }
 
@@ -63,9 +62,9 @@ namespace RRF.API.Controllers.V1
             var response = await _mediator.Send(command);
 
             if (!response.Success)
-                HandleErrorResponse(response.Errors);
+                return HandleErrorResponse(response.Errors);
 
-            return Ok(response);
+            return Ok(response.Payload);
         }
 
         [HttpDelete]
@@ -75,7 +74,10 @@ namespace RRF.API.Controllers.V1
             var command = new DeleteUserCommand { UserProfileId = Guid.Parse(id) };
             var response = await _mediator.Send(command);
 
-            return NoContent();
+            if (!response.Success)
+                return HandleErrorResponse(response.Errors);
+
+            return Ok(response.Payload);
         }
     }
 }

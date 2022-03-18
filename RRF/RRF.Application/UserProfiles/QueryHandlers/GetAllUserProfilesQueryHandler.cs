@@ -8,10 +8,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RRF.Application.Models;
 
 namespace RRF.Application.UserProfiles.QueryHandlers
 {
-    public class GetAllUserProfilesQueryHandler : IRequestHandler<GetAllUserProfiles, IEnumerable<UserProfile>>
+    public class GetAllUserProfilesQueryHandler : IRequestHandler<GetAllUserProfiles, OperationResult<IEnumerable<UserProfile>>>
     {
         private readonly DataContext _ctx;
 
@@ -19,10 +20,13 @@ namespace RRF.Application.UserProfiles.QueryHandlers
         {
             _ctx = ctx;
         }
-        public async Task<IEnumerable<UserProfile>> Handle(GetAllUserProfiles request, 
+        public async Task<OperationResult<IEnumerable<UserProfile>>> Handle(GetAllUserProfiles request, 
             CancellationToken cancellationToken)
         {
-            return await _ctx.UserProfiles.ToListAsync();
+            var operationResult = new OperationResult<IEnumerable<UserProfile>>();
+            operationResult.Payload = await _ctx.UserProfiles.ToListAsync();
+            operationResult.Success = true;
+            return operationResult;
         }
     }
 }
